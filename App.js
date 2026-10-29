@@ -121,8 +121,8 @@ const useTheme = () => useContext(ThemeCtx);
 function vibrateWithIntensity(durationMs, percent) {
   Vibration.cancel();
   if (percent >= 100) return Vibration.vibrate(durationMs);
-  const cycle = 100;
-  const on = Math.max(10, Math.round((cycle * percent) / 100));
+  const cycle = 200;
+  const on = Math.max(40, Math.round((cycle * percent) / 100));
   const pattern = [0];
   for (let t = 0; t < durationMs; t += cycle) pattern.push(on, cycle - on);
   Vibration.vibrate(pattern);
